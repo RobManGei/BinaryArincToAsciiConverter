@@ -1,4 +1,4 @@
-// BinaryArincToAscii.cpp : Definiert den Einstiegspunkt für die Konsolenanwendung.
+// BinaryArincToAscii.cpp : Definiert den Einstiegspunkt fÃ¼r die Konsolenanwendung.
 //
 
 #include "stdafx.h"
@@ -58,7 +58,7 @@ void release_argn(int argc, char ** nargv)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	
+	//Call must be with inputfile and outputfile
 	if(argc != 3){
 		std::cout << "Keine Parameter! Aufruf: binaryArincToAscii <infile> <outfile>" << std::endl;
 		return 0;
@@ -77,12 +77,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	fopen_s(&f, argn[1], "rb");
    	fopen_s(&g, argn[2], "a");
 
-
+   //parse the inputfile
    while(!feof(f)){
 	   
 	   if(fread(&timestamp, sizeof(char) * 13, 1, f) > 0){
 		   fread(&word, sizeof(long), 1, f);
 		   numArincWords = word;
+		   //write to outputfile
 		   fprintf(g, "%s", timestamp);
 		   fprintf(g, "\t");
 		   fprintf(g, "%i", word);	
