@@ -98,10 +98,11 @@ int _tmain(int argc, _TCHAR* argv[])
 		   for(int i = 0; i < numArincWords+3; i++){
 			   fread(&word, sizeof(long), 1, f);
 			   fprintf(g, "%i", word);	
-			   fprintf(g, "\t");
+			   if(i < numArincWords+2){
+			   	fprintf(g, "\t");
+			   }
 		   }
-
-		//   fprintf(g, "\n");
+		   fprintf(g, "\n");		
 	   }
 	   
 	   
